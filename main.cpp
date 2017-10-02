@@ -60,7 +60,7 @@ int main()
     antoine.mettreProduitsDansPanier(jeuVideo, 1);
     antoine.mettreProduitsDansPanier(cahier, 3);
 
-    antoine.retirerProduitsDuPanier(cahier, 3);
+    antoine.retirerProduitsDuPanier(cahier, 2);
 
 
     cout << "\n\n\n\n\n\n" ;

@@ -36,8 +36,25 @@ void Panier::ajoute( Produit &unProduit, size_t quantite)
 {
     cout << "fonction ajouteUnProduit de la class Panier\n";
 
-    Produit* leProduit = new Produit (unProduit);
+    Produit* leProduit = nullptr;
 
+    if (m_contenuDuPanier.size() == 0)
+    {
+        leProduit = new Produit (unProduit);
+    }
+
+    else
+    {
+        for (auto element : m_contenuDuPanier)
+            if (*element.first == unProduit)
+            {
+                leProduit = element.first;
+            }
+        else
+            {
+                leProduit = new Produit (unProduit);
+            }
+    }
 
     if ( m_contenuDuPanier.find( leProduit ) == m_contenuDuPanier.end() )
     {
@@ -68,7 +85,16 @@ void Panier::ajoute( Produit &unProduit, size_t quantite)
 void Panier::retire( Produit &unProduit, size_t quantite)
 {
 
-    Produit* leProduit = &unProduit;
+    Produit* leProduit = nullptr;
+
+    for (auto element : m_contenuDuPanier)
+    {
+        if (*element.first == unProduit)
+        {
+            cout << "found ya!\n";
+            leProduit = element.first;
+        }
+    }
 
 
     if (    m_contenuDuPanier.find( leProduit ) != m_contenuDuPanier.end() &&
