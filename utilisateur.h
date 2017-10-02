@@ -16,6 +16,9 @@ public:
 
     void payerPanier();
 
+    void mettreProduitsDansPanier ( Produit &unProduit, size_t quantite);
+    void retirerProduitsDuPanier ( Produit &unProduit, size_t quantite);
+
 
     Panier panierCourant() const;
 

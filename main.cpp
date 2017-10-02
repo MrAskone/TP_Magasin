@@ -43,22 +43,27 @@ int main()
     Utilisateur antoine ( 123, "Antoine Kone", 300);
     Utilisateur gates ( 1 , "Billy Porte", 250000);
 
-    Produit* camember = new Produit ( "Camembert PresseTrident", 2.30 );
-    Produit* television = new Produit ( "Tele 100pouces", 2500 );
-    Produit* fromageBlanc = new Produit ( "Fjorb Nature", 3.06 );
-    Produit* ketchup = new Produit ( "Ketchup Einz 150ml" , 0.75 );
-    Produit* beurre = new Produit ( "Margarine Carrefur" , 0.86 );
-    Produit* cahier = new Produit ( "Cahier Auk100, 300 pages" , 1.07 );
-    Produit* cacahouete = new Produit ( "Bennet-Nuts 150g" , 3.21 );
-    Produit* galetteDesRois = new Produit ( "AuxChamps pour 4 personnes" , 5.99 );
-    Produit* jeuVideo = new Produit ( "Last Fantasy LXXVII" , 87.40 );
-    Produit* ordinateur = new Produit ( "Alien?Where?" , 3500 );
+    Produit camember ( "Camembert PresseTrident", 2.30 );
+    Produit television ( "Tele 100pouces", 2500 );
+    Produit fromageBlanc ( "Fjorb Nature", 3.06 );
+    Produit ketchup ( "Ketchup Einz 150ml" , 0.75 );
+    Produit beurre ( "Margarine Carrefur" , 0.86 );
+    Produit cahier ( "Cahier Auk100, 300 pages" , 1.07 );
+    Produit cacahouete ( "Bennet-Nuts 150g" , 3.21 );
+    Produit galetteDesRois ( "AuxChamps pour 4 personnes" , 5.99 );
+    Produit jeuVideo ( "Last Fantasy LXXVII" , 87.40 );
+    Produit ordinateur ( "Alien?Where?" , 3500 );
 
 
-    antoine.panierCourant().ajoute(cacahouete, 1);
-    antoine.panierCourant().ajoute(cacahouete, 1);
-    antoine.panierCourant().ajoute(jeuVideo, 1);
-    antoine.panierCourant().ajoute(cahier, 3);
+    antoine.mettreProduitsDansPanier(cacahouete, 1);
+    antoine.mettreProduitsDansPanier(cacahouete, 1);
+    antoine.mettreProduitsDansPanier(jeuVideo, 1);
+    antoine.mettreProduitsDansPanier(cahier, 3);
+
+    antoine.retirerProduitsDuPanier(cahier, 3);
+
+
+    cout << "\n\n\n\n\n\n" ;
 
     antoine.panierCourant().affiche();
 

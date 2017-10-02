@@ -33,6 +33,20 @@ void Utilisateur::payerPanier()
 
 }
 
+
+void Utilisateur::mettreProduitsDansPanier( Produit &unProduit, size_t quantite)
+{
+    m_panierCourant.ajoute(unProduit, quantite);
+}
+
+
+void Utilisateur::retirerProduitsDuPanier( Produit &unProduit, size_t quantite)
+{
+
+    m_panierCourant.retire(unProduit, quantite);
+}
+
+
 Panier Utilisateur::panierCourant() const
 {
     return m_panierCourant;
